@@ -3,7 +3,7 @@
  */
 
 L.LatLng = function (lat, lng, alt) {
-	if (isNaN(lat) || isNaN(lng)) {
+	if (isNaN(lat) || isNaN(lng) || Math.abs(lat) > 90 || Math.abs(lng) > 180) {
 		throw new Error('Invalid LatLng object: (' + lat + ', ' + lng + ')');
 	}
 
